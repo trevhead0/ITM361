@@ -1,0 +1,25 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
+
+/* Begin site styles below */
+
+/* Taken from Karl Stolley;   1em = 18px; 1 lead = 22px; Modular scale (perfect fifth): https://www.modularscale.com/?18&px&1.5*/
+
+html {
+  font-size: 1.125em; /* 18px / 16px = 1.125em */
+  line-height: 1.222em; /* 22px / 18px = 1.222... */
+  /*background-image: url(22px-baseline.png);*/
+  padding: 1.222em 1em;
+}
+h2,h3,h4{font-weight: 600;/*I like emphasis*/padding-bottom: .4em;padding-top:.4em}
+h2{ font-size:2.25em/*40.5px//1.5 mod scale from 1.5 is 1.2.25*/}
+h3{ font-size:1.5em/*27px//1.5 mod scale from 1.125 is 1.5*/}
+ul,ol {padding: 0 0 0 1.222em;padding-bottom: .6111em}
+ul{list-style-type: square;}
+li {padding-bottom: .061111em; /* 11 / 18 = 0.6111 */}
+p {padding-bottom: 1.222em; /* 22px / 18px = 1.222... */}

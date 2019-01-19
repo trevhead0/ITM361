@@ -1,0 +1,160 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* stylelint-disable*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
+
+/* Begin site styles below */
+
+/*
+ Used by: Karl Stolley
+ 1em = 18px;
+ 1 lead = 23;
+ Modular scale (golden section):https://www.modularscale.com/?18&px&1.277
+*/
+
+/*
+TODO:   FIX FAMILY BULLET POINTS MIXING WITH GRID LAYOUT;
+        ADD FAMILY GALLERY W/ A VIDEO OF LIL ADELINE
+        REARRANGE HEADER TO BE TITLE ON LEFT/NAV ON RIGHT
+        ADDRESS IN RESUME TO RIGHT
+*/
+
+/* Custom Site Styles */
+
+/* ========== Base Styles ========== */
+/* Base Styles (element selectors; color, typography, and that's it)*/
+html {
+  font-size: 1.125em; /* 18px / 16px = 1.125em */
+  font-family: "K2D", sans-serif;
+  line-height: 1.277em; /* 23px / 18px = 1.277em... */
+  background-color: #D1B894;
+  padding: 1.277em 1em /* 23 / 18px = 1.277... half a line space inbetween*/;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+h1 {
+  /*Changed Smaller size for smaller browser, might enlarge for larger screens*/
+  font-size:4.236em; /*76.244px / 18 px = 4.236...*/
+  text-align: center;
+  /*font-size: 2.618em; /* 47.123 / 18 = 2.25 */
+  line-height: 1.309em /*114.366 / 76.244 = 1.5*/
+}
+h2 {
+  /*font-size: 2.618em; /* 47.123 / 18 = 2.25 */
+  font-size: 1.618em; /* 29.124 / 18 = 1.618 */
+  line-height: 1.309em; /* 61.685 / 47.123 = 1.309 */
+}
+h3 {
+  /*font-size: 1.618em; /* 29.124 / 18 = 1.618 */
+  line-height: 1.307em; /* 38.0655 / 29.124 = 1.307... */
+  padding-bottom: 0.4074074074em; /* 11 / 27 = 0.4074074074 */
+}
+
+p {
+  padding-bottom: 1.277em; /* 23 / 18px = 1.277... */
+}
+
+ul, ol {
+  padding-left: 0;
+}
+
+ul {
+  padding: 0 0 0.6111em 0;
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: none;
+}
+li {
+  padding-bottom: 0.6111em; /* 11 / 18 = 0.6111 */
+}
+figcaption {
+  text-align: center;
+}
+audio,
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========== Layout ========== */
+/* Layout (id selectors; width/height, position, flexbox, grid)*/
+
+#header {
+  background: rgba(211,211,211, 0.5)/*silver slightly transparent*/;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#navigation{
+  align-self: flex-end;
+}
+#skills {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 1em;
+  grid-template-rows: auto;
+  list-style-type: square;
+}
+/*This is side project inside of project, meant to be a fun lil easter egg*/
+#chessboard{
+  background-color: red;
+  padding: 1em 1em;
+  max-height: 50vw;
+  max-width: 50vw;
+  border-color: black;
+  border-width: thick;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-template-rows: repeat(8,1fr);
+}
+/* ========== Module ========== */
+/* Module/Modular Section (class or descedent selectors; repeating specific styles) */
+.location{
+  padding-bottom: 2em/**/;
+}
+.jobtitle, .school {
+  font-weight: 600;
+}
+.resume-section {
+  text-decoration: underline;
+}
+/* ========== State ========== */
+/* State (repeat the structure above; media queries, JavaScript-dependent styles) */
+
+@media screen and (min-width: 600px) {
+  .family-member {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 1em;
+    grid-template-rows: auto;
+    justify-content: center;
+    /*background-color: red;*/
+  }
+  .family-image, .family-name {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /*background-color: orange;*/
+  }
+}
+@media screen and (min-width: 700px/*700px/ 18px = 38.8888em*/) {
+  html {
+    max-width: 38.8888em ;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 900px/*900px / 18px =50em*/) {
+  html {
+    max-width: 50em/*I like this as max width;*/
+  }
+}
